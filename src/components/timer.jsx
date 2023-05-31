@@ -9,12 +9,16 @@ const minute = second * 60;
 const hour = minute * 60;
 const day = hour * 24;
 
-const Timer = ({ countdownDetails, removeCard }) => {
+const Timer = ({ setShowTimer, countdownDetails, removeCard }) => {
   const [timer, setTimer] = useState('Mathing this one out...');
   const { title, date } = countdownDetails;
 
   const handleDeleteBtnClick = () => {
     removeCard();
+  }
+
+  const handleEditBtnClick = () => {
+    setShowTimer(false);
   }
 
   useEffect(() => {
@@ -54,8 +58,8 @@ const Timer = ({ countdownDetails, removeCard }) => {
   return (
         <div className='timer-container'>
           <div className='card-btn-container'>
-              <FontAwesomeIcon className='icon' icon={faPencil} />
-              <FontAwesomeIcon className='icon' icon={faTrash} onClick={handleDeleteBtnClick}/>
+              <FontAwesomeIcon className='icon' icon={faPencil} onClick={handleEditBtnClick} />
+              <FontAwesomeIcon className='icon' icon={faTrash} onClick={handleDeleteBtnClick} />
           </div>
           <h2 className='timer-title'>{title}</h2>
           <p>{timer}</p>
