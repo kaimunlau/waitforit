@@ -24,11 +24,11 @@ const Form = ({ setShowTimer, card, cards, setCards }) => {
         <form className="form">
             <div className="form-group">
                 <label htmlFor="title">Title</label>
-                <input name="title" placeholder="What's coming next?" required />
+                <input name="title" placeholder="What's coming next?" required value={card.title !== '' && card.title}/>
             </div>
             <div className="form-group">
                 <label htmlFor="date">Date</label>
-                <input name="date" type="date" min={today} required />
+                <input name="date" type="date" min={today} required value={card.date !== '' && card.date} />
             </div>
             <button type="submit" onClick={handleSaveBtnClick} >Save</button>
         </form>
