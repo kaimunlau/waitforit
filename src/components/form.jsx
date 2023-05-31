@@ -1,34 +1,42 @@
 const Form = ({ setShowTimer, card, cards, setCards }) => {
     const today = new Date().toISOString().split('T')[0];
 
+    const updateCountdown = (title, date) => {
+        const updatedCountdown = {
+            ...card,
+            title,
+            date,
+        };
+
+        setCards((prevCards) =>
+            prevCards.map((prevCard) =>
+            prevCard.id === card.id ? updatedCountdown : prevCard
+            )
+        );
+    };
+
     const handleSaveBtnClick = (e) => {
         e.preventDefault();
-
-        const countdown = {
-            id: card.id,
-            title: e.target.form[0].value,
-            date: e.target.form[1].value
-        };
-        card.title = countdown.title;
-        card.date = countdown.date;
-
-        // update cards array this way to trigger useEffect in App.js
-        const updatedCards = cards.filter((toUpdate) => toUpdate.id !== card.id);
-        updatedCards.push(countdown)
-        setCards(updatedCards);
-
+        const title = e.target.form[0].value;
+        const date = e.target.form[1].value;
+        updateCountdown(title, date);
         setShowTimer(true);
-    }
+    };
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        updateCountdown(name === 'title' ? value : card.title, name === 'date' ? value : card.date);
+    };
 
     return (
         <form className="form">
             <div className="form-group">
                 <label htmlFor="title">Title</label>
-                <input name="title" placeholder="What's coming next?" required value={card.title !== '' && card.title}/>
+                <input name="title" placeholder="What's coming next?" required value={card.title || ''} onChange={handleInputChange}/>
             </div>
             <div className="form-group">
                 <label htmlFor="date">Date</label>
-                <input name="date" type="date" min={today} required value={card.date !== '' && card.date} />
+                <input name="date" type="date" min={today} required value={card.date || ''} onChange={handleInputChange}/>
             </div>
             <button type="submit" onClick={handleSaveBtnClick} >Save</button>
         </form>
