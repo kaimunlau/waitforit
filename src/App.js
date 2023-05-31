@@ -1,8 +1,7 @@
 import Card from './components/card';
 import './App.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import React, { useEffect, useRef, useState } from 'react';
+import Header from './components/header';
 
 function App() {
   const [cards, setCards] = useState([]); // State for storing all timer objects
@@ -51,13 +50,9 @@ function App() {
   
   return (
     <div className="App">
-      <div className='bg'></div>
-      <div className='content'>
-        <header className="App-header">
-          <h1 className='main-title'>Waitfor.it</h1>
-          <div className='icon-container'>
-            <FontAwesomeIcon icon={faPlus} className='icon-new' onClick={handlePlusBtnClick}/>
-          </div>
+      <div className='background-image'></div>
+        <header className="App-header glass">
+          <Header handlePlusBtnClick={handlePlusBtnClick}/>
         </header>
         <main className='main'>
           <div className='timers' >
@@ -76,7 +71,6 @@ function App() {
           </div>
         </main>
       </div>
-    </div>
   );
 }
 

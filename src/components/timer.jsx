@@ -29,7 +29,20 @@ const Timer = ({ countdownDetails, removeCard }) => {
       const minutes = Math.floor((distance % hour) / minute);
       const seconds = Math.floor((distance % minute) / second);
 
-      setTimer(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+      function formatTwoDigits(number) {
+        return String(number).padStart(2, '0');
+      }
+      
+      setTimer(() => {
+        return (
+          <>
+            <span>{formatTwoDigits(days)}</span>d&nbsp;
+            <span>{formatTwoDigits(hours)}</span>h&nbsp;
+            <span>{formatTwoDigits(minutes)}</span>m&nbsp;
+            <span>{formatTwoDigits(seconds)}</span>s
+          </>
+        )
+      })
 
       if (distance <= 0) {
         clearInterval(interval);
@@ -41,8 +54,8 @@ const Timer = ({ countdownDetails, removeCard }) => {
   return (
         <div className='timer-container'>
           <div className='card-btn-container'>
-              <FontAwesomeIcon icon={faPencil} />
-              <FontAwesomeIcon icon={faTrash} onClick={handleDeleteBtnClick}/>
+              <FontAwesomeIcon className='icon' icon={faPencil} />
+              <FontAwesomeIcon className='icon' icon={faTrash} onClick={handleDeleteBtnClick}/>
           </div>
           <h2 className='timer-title'>{title}</h2>
           <p>{timer}</p>

@@ -9,7 +9,7 @@ const Card = ({ card, removeCard, cards, setCards }) => {
   });
 
   return (
-    <div className='card-container glass'>
+    <div className='card-container glass shake-on-hover'>
       {showTimer ? 
       <Timer countdownDetails={card} removeCard={removeCard}/> : 
       <Form setShowTimer={setShowTimer} card={card} cards={cards} setCards={setCards}/>}

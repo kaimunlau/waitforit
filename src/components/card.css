@@ -5,20 +5,22 @@
     justify-content: center;
     border-radius: 20px;
     margin: .5rem 0;
-    min-height: 180px;
-}
-
-.glass {
-    background: rgba( 255, 255, 255, 0.8 );
-    box-shadow: 0 8px 32px 0 rgba(192, 193, 214, 0.37);
-    backdrop-filter: blur( 6.5px );
-    -webkit-backdrop-filter: blur( 6.5px );
-    border-radius: 10px;
-}
+    min-height: 200px;
+    color: var(--color-4-dark);
+} 
 
 /* Timer elements */
 .timer-container {
-    padding: 1rem 1rem;
+    font-size: 1.1rem;
+}
+
+.timer-container p {
+    min-height: 2rem;
+}
+
+.timer-container span {
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 
 .card-btn-container {
@@ -26,7 +28,40 @@
     min-width: 40px;
     display: flex;
     justify-content: space-between;
+    padding-right: 1rem;
 }
+
+.card-btn-container .icon {
+    margin: 0 0.4rem;
+    color: var(--color-2-transparent);
+    transition: all .7s ease-in-out;
+}
+
+.card-btn-container .icon:hover {
+    cursor: pointer;
+    
+}
+
+.card-container:hover .icon {
+    color: var(--color-4-dark);
+}
+
+.shake-on-hover {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .shake-on-hover:hover {
+    animation: shake 0.4s;
+  }
+  
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-1px) rotate(-1deg); }
+    50% { transform: translateX(1px) rotate(1deg); }
+    75% { transform: translateX(-1px) rotate(-1deg); }
+    100% { transform: translateX(0); }
+  }
+  
 
 /* Form elements */
 .form {
@@ -60,6 +95,23 @@
 }
 
 .form button {
-    background-color: black;
-    color: aliceblue;
+    background-color: var(--color-1);
+    color: var(--color-4-dark);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/** Breakpoints:
+  sm: min-width: 640px;
+  md: min-width: 768px;
+  lg: min-width: 1024px;
+  xl: min-width: 1280px;
+  2xl: min-width: 1536px;
+**/
+
+/* make buttons more visible on touch devices */
+@media (hover:none) {
+    .card-btn-container .icon {
+        color: var(--color-4-dark);
+    }
 }
