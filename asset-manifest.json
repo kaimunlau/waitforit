@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/waitforit/static/css/main.4fd627a8.css",
+    "main.js": "/waitforit/static/js/main.0bdcbfa5.js",
+    "static/js/787.8e9e615b.chunk.js": "/waitforit/static/js/787.8e9e615b.chunk.js",
+    "static/media/bg.png": "/waitforit/static/media/bg.b0e4ad2dd34ec4dd54ff.png",
+    "index.html": "/waitforit/index.html",
+    "main.4fd627a8.css.map": "/waitforit/static/css/main.4fd627a8.css.map",
+    "main.0bdcbfa5.js.map": "/waitforit/static/js/main.0bdcbfa5.js.map",
+    "787.8e9e615b.chunk.js.map": "/waitforit/static/js/787.8e9e615b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4fd627a8.css",
+    "static/js/main.0bdcbfa5.js"
+  ]
+}
