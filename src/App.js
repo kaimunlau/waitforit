@@ -3,6 +3,7 @@ import './App.css';
 import React, { useEffect, useRef, useState } from 'react';
 import Header from './components/header';
 import NoCardsOverlay from './components/noCardsOverlay';
+import Footer from './components/footer';
 
 
 function App() {
@@ -89,6 +90,7 @@ function App() {
           })}
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
