@@ -117,6 +117,9 @@
 /* Shadow overlay when no cards exist */
 .in-focus {
   box-shadow: -120px 160px 1000px 400px rgba(0,0,0,0.76);
+  -webkit-box-shadow: -120px 160px 1000px 400px rgba(0,0,0,0.76);
+  -moz-box-shadow: -120px 160px 1000px 400px rgba(0,0,0,0.76);
+  -ms-box-shadow: -120px 160px 1000px 400px rgba(0,0,0,0.76);
   transition: var(--no-card-overlay-transition);
 }
 
@@ -127,6 +130,12 @@
   xl: min-width: 1280px;
   2xl: min-width: 1536px;
 **/
+
+@media  (max-width: 428px) {
+  .no-cards-overlay {
+    margin: 0 0.5rem;
+  }
+}
 
 @media (min-width: 768px) {
   .no-cards-overlay {
@@ -152,5 +161,8 @@
 
   .in-focus {
     box-shadow: -220px 160px 1000px 1000px rgba(0,0,0,0.76);
+    -webkit-box-shadow: -220px 160px 1000px 1000px rgba(0,0,0,0.76);
+    -moz-box-shadow: -220px 160px 1000px 1000px rgba(0,0,0,0.76);
+    -ms-box-shadow: -220px 160px 1000px 1000px rgba(0,0,0,0.76);
   }
 }
