@@ -2,6 +2,8 @@ import Card from './components/card';
 import './App.css';
 import React, { useEffect, useRef, useState } from 'react';
 import Header from './components/header';
+import NoCardsOverlay from './components/noCardsOverlay';
+
 
 function App() {
   const [cards, setCards] = useState([]); // State for storing all timer objects
@@ -59,13 +61,14 @@ function App() {
   }, [cards])
 
   const handlePlusBtnClick = () => {
-    setInFocus(false);
+    setInFocus('');
     addNewCard();
   }
   
   return (
     
     <div className={`App`}>
+      {inFocus !== '' && <NoCardsOverlay />}
       <div className='background-image'></div>
       <header className="App-header glass">
         <Header handlePlusBtnClick={handlePlusBtnClick} inFocus={inFocus}/>

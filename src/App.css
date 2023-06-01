@@ -8,6 +8,9 @@
   /* text colors */
   --color-2-transparent: #ffb7ae6c;
   --color-4-dark: #7167a5;
+
+  /* animations */
+  --no-card-overlay-transition: all .9s ease-in-out;
 }
 
 .App {
@@ -23,6 +26,41 @@
   backdrop-filter: blur( 6.5px );
   -webkit-backdrop-filter: blur( 6.5px );
   border-radius: 10px;
+}
+
+.no-cards-overlay {
+  position: absolute;
+  top: 6rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+}
+
+.no-cards-overlay p {
+  color: var(--color-2);
+  font-size: 2rem;
+  animation: appear 2s ease-in-out forwards;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.no-cards-overlay p .icon-new {
+  color: var(--color-4);
 }
 
 .App-header {
@@ -79,7 +117,7 @@
 /* Shadow overlay when no cards exist */
 .in-focus {
   box-shadow: -120px 160px 1000px 400px rgba(0,0,0,0.76);
-  transition: all .9s ease-in-out;
+  transition: var(--no-card-overlay-transition);
 }
 
 /** Breakpoints:
@@ -91,6 +129,11 @@
 **/
 
 @media (min-width: 768px) {
+  .no-cards-overlay {
+    justify-content: end;
+    margin-right: 8rem;
+  }
+
   .App-header {
     padding: 2rem 3rem;
     min-height: 4rem;
