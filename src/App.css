@@ -76,6 +76,12 @@
   display: grid;
 }
 
+/* Shadow overlay when no cards exist */
+.in-focus {
+  box-shadow: -120px 160px 1000px 400px rgba(0,0,0,0.76);
+  transition: all .9s ease-in-out;
+}
+
 /** Breakpoints:
   sm: min-width: 640px;
   md: min-width: 768px;
@@ -99,5 +105,9 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
     column-gap: 1.5rem;
     row-gap: 1.5rem;
+  }
+
+  .in-focus {
+    box-shadow: -220px 160px 1000px 1000px rgba(0,0,0,0.76);
   }
 }
