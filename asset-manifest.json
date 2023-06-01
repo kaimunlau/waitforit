@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/waitforit/static/css/main.69df346e.css",
-    "main.js": "/waitforit/static/js/main.4cd5ad50.js",
+    "main.css": "/waitforit/static/css/main.feabd82f.css",
+    "main.js": "/waitforit/static/js/main.52df176f.js",
     "static/js/787.8e9e615b.chunk.js": "/waitforit/static/js/787.8e9e615b.chunk.js",
     "static/media/bg.png": "/waitforit/static/media/bg.b0e4ad2dd34ec4dd54ff.png",
     "index.html": "/waitforit/index.html",
-    "main.69df346e.css.map": "/waitforit/static/css/main.69df346e.css.map",
-    "main.4cd5ad50.js.map": "/waitforit/static/js/main.4cd5ad50.js.map",
+    "main.feabd82f.css.map": "/waitforit/static/css/main.feabd82f.css.map",
+    "main.52df176f.js.map": "/waitforit/static/js/main.52df176f.js.map",
     "787.8e9e615b.chunk.js.map": "/waitforit/static/js/787.8e9e615b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.69df346e.css",
-    "static/js/main.4cd5ad50.js"
+    "static/css/main.feabd82f.css",
+    "static/js/main.52df176f.js"
   ]
 }
